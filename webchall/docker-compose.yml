@@ -1,0 +1,34 @@
+version: "3"
+services:
+  web:
+    build: ./docker/web
+    container_name: web-server
+    volumes:
+      - ./data/web:/app
+    stdin_open: true
+    tty: true
+    depends_on:
+      - db
+    ports:
+      - "9090:9090"
+    networks:
+      backend:
+        ipv4_address: 172.22.0.3
+  db:
+    build: ./docker/db
+    container_name: mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: "mysq1_r00t_p4ssw0rd_d0_n0t_cr4ck_th1s"
+    volumes:
+      - "./data/db/:/docker-entrypoint-initdb.d/"
+    command: mysqld --innodb-buffer-pool-size=16M
+    networks:
+      backend:
+        ipv4_address: 172.22.0.4
+    
+networks:
+  backend:
+    driver: bridge
+    ipam:
+      config:
+      - subnet: 172.22.0.0/24
