@@ -1,7 +1,7 @@
-var flag = atob("EgQIFCQdGzYLMBssNBccAg0bADYHFAAbBxMzBzocDAkEAzMMLDkUDhUi");
+var flag = atob("EhsAQW9bQCQBAAcACAoMGAw2FzoGETkNHBE+HwAmHhsU");
 var xorkey = "this_is_xor_key";
-var encoded = "";
+var decoded = "";
 for (var i=0; i<flag.length; i++) {
-    encoded += String.fromCharCode(flag[i].charCodeAt() ^ xorkey[i % xorkey.length].charCodeAt());
+    decoded += String.fromCharCode(flag[i].charCodeAt() ^ xorkey[i % xorkey.length].charCodeAt());
 }
-console.log(encoded);
+console.log(decoded);

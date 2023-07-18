@@ -65,7 +65,7 @@ def index():
         return "error"
 
     if flask.session["userid"] == "admin":
-        return r"fsi2023{yes_y0u_ar3_log1n_as_adm1n!}"
+        return r"fsi2023{fake_flag!_try_to_get_this}"
     elif flask.session["userid"] == "guest":
         return "hello guest!"
     else:

@@ -6,7 +6,7 @@ int main(int argc, char* argv[]){
     printf("input? ");
     gets(var1);
     printf("%s",var1);
-    if (!strcmp(secret, "gachonuniversity")){
+    if (!strcmp(secret, "fsi2023challenge")){
         printf("\n\nsuccess!\n");
     } else {
         printf("\n\nfail..\n");

@@ -13,7 +13,7 @@ create table flag (
    flag varchar(255)
 ) default character set utf8 collate utf8_general_ci;
 
-insert into flag values("fsi2023{th1s_1s_s1mp1e_sqli_vu1n}");
+insert into flag values("fsi2023{fake_flag!_try_to_get_this}");
 insert into user (userid, userpw) values("admin", "adm1n_p4ssw0rd");
 insert into user (userid, userpw) values("guest", "guest");
 
